@@ -1,0 +1,77 @@
+:root {
+  --mouth-line: 52%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: black;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.scene {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.face {
+  position: absolute;
+  inset: 0;
+  background-image: url("image.png");
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+}
+
+.upper {
+  clip-path: inset(0 0 calc(100% - var(--mouth-line)) 0);
+}
+
+.lower {
+  clip-path: inset(var(--mouth-line) 0 0 0);
+}
+
+/* slider quasi invisibile */
+#slider {
+  position: absolute;
+  right: 3%;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  width: 260px;
+  opacity: 0.15;
+  z-index: 10;
+}
+
+#slider:hover {
+  opacity: 0.6;
+}
+
+/* vignettatura artistica */
+.vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0,0,0,0) 50%,
+    rgba(0,0,0,0.5) 100%
+  );
+  transition: opacity 0.2s;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  #slider {
+    bottom: 5%;
+    top: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+  }
+}
