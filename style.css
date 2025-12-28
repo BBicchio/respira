@@ -37,7 +37,6 @@ body {
   clip-path: inset(var(--mouth-line) 0 0 0);
 }
 
-/* slider quasi invisibile */
 #slider {
   position: absolute;
   right: 3%;
@@ -52,7 +51,6 @@ body {
   opacity: 0.6;
 }
 
-/* vignettatura artistica */
 .vignette {
   position: absolute;
   inset: 0;
@@ -65,7 +63,6 @@ body {
   transition: opacity 0.2s;
 }
 
-/* mobile */
 @media (max-width: 768px) {
   #slider {
     bottom: 5%;
@@ -75,3 +72,4 @@ body {
     width: 70%;
   }
 }
+
