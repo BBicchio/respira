@@ -7,8 +7,7 @@ let current = 0;
 let velocity = 0;
 
 function animate() {
-  // spring fisica
-  const tension = 0.08;
+  // spring fisic  const tension = 0.08;
   const friction = 0.85;
 
   velocity += (target - current) * tension;
@@ -26,9 +25,9 @@ slider.addEventListener("input", () => {
 });
 
 slider.addEventListener("change", () => {
-  // ritorno lento quando lasci
   target = 0;
   slider.value = 0;
 });
 
 animate();
+
